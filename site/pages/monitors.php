@@ -34,7 +34,7 @@ $monitors_row = mysqli_fetch_assoc($monitors_result);
             </tr>
           </thead>
           <tbody>
-			  <?php do { 
+			  <?php if($monitors_total>0){ do { 
                 $id = $monitors_row['docker_id'];
 $docker1_query = "SELECT docker_label FROM `dockers` where docker_id = '$id';";
 $docker1_result = mysqli_query($con, $docker1_query);
@@ -53,7 +53,7 @@ $docker1_row = mysqli_fetch_assoc($docker1_result);
                     <?php } ?></td>
               <td align="left"><span type="button" class="btn btn-primary btn-sm">Edit</span></td>
             </tr>
-			  <?php } while ($monitors_row = mysqli_fetch_assoc($monitors_result)); ?>  
+			  <?php } while ($monitors_row = mysqli_fetch_assoc($monitors_result)); } ?>  
           </tbody>
         </table>
       </div>
