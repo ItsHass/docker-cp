@@ -35,7 +35,7 @@ $logs_total_ = mysqli_num_rows($lastactions_result);
             </tr>
           </thead>
           <tbody>
-			  <?php do { ?>
+			  <?php if($logs_total>0){ do { ?>
             <tr>
               <td align="left" nowrap="nowrap"><?php echo date("Y-m-d H:i:s",$logs_row['unixstamp']); ?></td>
               <td align="left"><?php echo $logs_row['docker_id']; ?></td>
@@ -49,7 +49,7 @@ $logs_total_ = mysqli_num_rows($lastactions_result);
 			  </td>
               <td align="left"><?php echo $logs_row['json']; ?></td>
             </tr>
-			  <?php } while ($logs_row = mysqli_fetch_assoc($logs_result)); ?>  
+			  <?php } while ($logs_row = mysqli_fetch_assoc($logs_result)); } ?>  
           </tbody>
         </table>
       </div>
