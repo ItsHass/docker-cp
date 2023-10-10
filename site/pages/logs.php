@@ -49,7 +49,7 @@ $logs_total_ = mysqli_num_rows($lastactions_result);
 			  </td>
               <td align="left"><?php echo $logs_row['json']; ?></td>
             </tr>
-			  <?php } while ($logs_row = mysqli_fetch_assoc($logs_result)); } ?>  
+			  <?php } while ($logs_row = mysqli_fetch_assoc($logs_result)); }else{ echo "No Logs"; } ?>  
           </tbody>
         </table>
       </div>
