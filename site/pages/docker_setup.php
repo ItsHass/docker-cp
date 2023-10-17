@@ -18,13 +18,13 @@ $Insert = 1;
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Monitor Setup</h1>
+        <h1 class="h2">Docker  Setup</h1>
       </div>
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
     <li class="breadcrumb-item"><a href="./?page=monitors">Monitors</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Monitor setup</li>
+    <li class="breadcrumb-item active" aria-current="page">Monitor setup </li>
   </ol>
 </nav>
 

@@ -8,7 +8,7 @@ use phpseclib3\Net\SSH2;
 
 $ssh = new SSH2("$serverIP");
 if (!$ssh->login("$serverUser", "$serverPW")) {
-    echo " login failed ";
+    echo " !!!! login failed ";
 } // else{ //echo "<center><h3> connected... $serverUser@$serverIP </h3></center>  <br> <pre>"; }
 
 #echo "logging into $serverIP, checking $containerID <br>";

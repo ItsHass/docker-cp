@@ -87,8 +87,8 @@ include_once("includes/function_timeago.php");
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">....</button>
-            <a href="./?page=logs"><span type="button" class="btn btn-sm btn-outline-secondary">Logs</span></a>
+            <a class="p-1" href="./?page=docker_setup"><span type="button" class="btn  btn-sm btn-outline-secondary">New Docker</span></a>
+            <a class="p-1" href="./?page=logs"><span type="button" class="btn  btn-sm btn-outline-secondary">Logs</span></a>
           </div>
 	    </div>
       </div>
@@ -103,7 +103,7 @@ include_once("includes/function_timeago.php");
         <div>
           <h3 class="fs-2 text-body-emphasis">Monitors</h3>
           <p><?php echo $monitorsActive_total; ?> of <?php echo $monitors_total; ?> Active</p>
-          <a href="#" class="btn btn-link">
+          <a href="./?page=monitors" class="btn btn-link">
             View Monitors
           </a>
         </div>
@@ -115,7 +115,7 @@ include_once("includes/function_timeago.php");
         <div>
           <h3 class="fs-2 text-body-emphasis">Last Action</h3>
           <p><?php if($lastactions_total==0){ echo "No actions taken"; }else{ echo date("jS F Y g:i a T",$lastactions_row['unixstamp']); } ?></p>
-          <a href="#" class="btn btn-link">
+          <a href="./?page=logs&actions" class="btn btn-link">
             View Actions
           </a>
         </div>
@@ -127,7 +127,7 @@ include_once("includes/function_timeago.php");
         <div>
           <h3 class="fs-2 text-body-emphasis">Last Check</h3>
           <p><?php if($logs_total>0){ echo get_time_ago($last_log['unixstamp'])."<br>"; } ?><strong>Total Logs</strong>: <?php echo number_format($logs_total); ?></p>
-          <a href="#" class="btn btn-link">
+          <a href="./?page=logs" class="btn btn-link">
             View Logs
           </a>
         </div>
@@ -147,10 +147,10 @@ include_once("includes/function_timeago.php");
             </tr>
           </thead>
           <tbody>
-			  <?php if($docker_total>=1){  do { ?>
+			  <?php if($docker_total>0){  do { ?>
             <tr>
-              <td align="center"><a href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>"><?php echo $docker_row['docker_label']; ?></a></td>
-              <td align="left"><a href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>">View</a></td>
+              <td align="center"><a class="btn btn-secondary btn-sm" href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>"><?php echo $docker_row['docker_label']; ?></a></td>
+              <td align="left"><a class="btn btn-primary btn-sm" href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>">View</a> <a class="btn btn-primary btn-sm" href="./?page=docker_edit&id=<?php echo $docker_row['docker_id']; ?>">Edit</a></td>
             </tr>
 			  <?php } while ($docker_row = mysqli_fetch_assoc($docker_result)); }else{ ?>
 			  <tr>

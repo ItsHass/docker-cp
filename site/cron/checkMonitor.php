@@ -1,5 +1,5 @@
 <?php require_once("/home/hass/web/svr01.itshass.uk/public_html/docker/site/db/db.php"); require_once("/home/hass/web/svr01.itshass.uk/public_html/docker/site/db/connection.php"); ?>
-<?php 
+<?php header('Content-Type: application/json; charset=utf-8');
 #$docker_query = "SELECT * FROM `dockers`;";
 #$docker_result = mysqli_query($con, $docker_query);
 #$docker_total = mysqli_num_rows($docker_result);
@@ -10,12 +10,14 @@ $monitors_result = mysqli_query($con, $monitors_query);
 $monitors_total = mysqli_num_rows($monitors_result);
 $monitors_row = mysqli_fetch_assoc($monitors_result);
 
-echo "Total: $monitors_total <br>";
+echo "Total: $monitors_total
+";
 ?>
 <?php
 do{
+	$mid = $monitors_row['monitor_id'];
     $containerID = $monitors_row['container_id'];
-echo "checking : ". $containerID . "<br>";
+echo "checking : ". $containerID . " >> ";
     //get docker id > connection info
         $id = $monitors_row['docker_id'];
     $docker1_query = "SELECT * FROM `dockers` where docker_id = '$id';";
@@ -31,7 +33,8 @@ echo "checking : ". $containerID . "<br>";
         $containerStatus = strtolower($json_data['State']['Status']);
         $prefStatus = strtolower($monitors_row['prefStatus']);
 
-        echo "status: " .strtolower($containerStatus). " | expecting: ". strtolower($prefStatus) ."  ";
+        echo "status: " .strtolower($containerStatus). " | expecting: ". strtolower($prefStatus) ."  
+";
 
         if($containerStatus!=$prefStatus){
 			$Actions_required = "$prefStatus";
@@ -53,7 +56,3 @@ echo "checking : ". $containerID . "<br>";
 
 } while ($monitors_row = mysqli_fetch_assoc($monitors_result));
 ?>
-
-
-
-Finished

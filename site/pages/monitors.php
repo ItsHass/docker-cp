@@ -22,11 +22,12 @@ $monitors_row = mysqli_fetch_assoc($monitors_result);
 </nav>
 
 <div class="table-responsive small">
-        <p align="left"><strong>Total</strong>: <?php echo $monitors_total; ?></p>
+    <p align="left"><strong>Total</strong>: <?php echo $monitors_total; ?></p>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">Docker ID</th>
+              <th scope="col"> Name</th>
               <th scope="col">Container ID</th>
               <th scope="col">Pref Status</th>
               <th scope="col">Status</th>
@@ -44,16 +45,22 @@ $docker1_row = mysqli_fetch_assoc($docker1_result);
                 ?>
             <tr>
               <td align="left"><?php echo $docker_label; ?>  </td>
-              <td align="left"><?php echo $monitors_row['container_id']; ?></td>
+              <td align="left"><?php echo $monitors_row['container_name']; ?></td>
+              <td align="left"><?php echo substr($monitors_row['container_id'],0,15); ?>...</td>
               <td align="left"><?php echo $monitors_row['prefStatus']; ?></td>
               <td align="left"><?php $status = $monitors_row['active']; if($status == 1){ ?>
                 <span type="button" class="btn btn-success btn-sm">Active</span>
                 <?php }else{ ?>
                     <span type="button" class="btn btn-danger btn-sm">Disabled</span>    
                     <?php } ?></td>
-              <td align="left"><span type="button" class="btn btn-primary btn-sm">Edit</span></td>
+              <td align="left"><a href="./?page=monitor_edit&id=<?php echo $monitors_row['monitor_id']; ?>"><span type="button" class="btn btn-primary btn-sm">Edit</span></a></td>
             </tr>
-			  <?php } while ($monitors_row = mysqli_fetch_assoc($monitors_result)); } ?>  
+			  <?php } while ($monitors_row = mysqli_fetch_assoc($monitors_result)); ?>  
+            <?php }else{ ?>
+			  <tr>
+              <td colspan="6" align="center">No Monitors</td>
+            </tr>			
+			  <?php } ?>
           </tbody>
         </table>
       </div>

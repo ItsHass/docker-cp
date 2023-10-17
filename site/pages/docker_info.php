@@ -10,15 +10,6 @@ $dockerInfo_row = mysqli_fetch_assoc($dockerInfo_result);
 $json_data = json_decode($containers_json, true);
 ?>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Docker Information</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Button</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Button</button>
-          </div>
-	    </div>
-      </div>
 
 	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -68,7 +59,7 @@ $doCount = $doCount+1;
               <td width="1" align="left" nowrap="nowrap"><?php echo $State; ?></td>
               <td width="1" align="left" nowrap="nowrap"><?php echo $Status; ?></td>
               <td width="1" align="left" nowrap="nowrap"><?php echo date("M j G:i:s T Y",$Created); ?></td>
-              <td width="1" align="left" nowrap="nowrap"><a href="./?page=monitor_setup&docker=<?php echo $_GET['id']; ?>&id=<?php echo $Id; ?>">Setup Monitor</a></td>
+              <td width="1" align="left" nowrap="nowrap"><a class="btn btn-primary btn-sm" href="./?page=monitor_setup&name=<?php echo $Name; ?>&docker=<?php echo $_GET['id']; ?>&id=<?php echo str_replace("/","",$Name); ?>">Setup Monitor</a></td>
             </tr>
 <?php  } while($doCount<$doCountMax); ?>
 		  </tbody>
