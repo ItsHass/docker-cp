@@ -1,5 +1,5 @@
 <?php
-require_once("../../db/config.php");
+require_once("../db/config.php");
 $serverIP = $update_server_sshIP;
 $serverUser = $update_server_sshUSER;
 $serverPW = $update_server_sshPASS;
