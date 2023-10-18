@@ -20,14 +20,15 @@ if($github_version>0 && $current_version>0){
     // save the file by using base name
 
     if (file_put_contents("updateDownloads/".$file_name, @file_get_contents($url)))
-    {
+    	{
         echo "<p> Downloaded file </p>";
-    }
     // run ssh connection to run .sh file
         require_once("updateRunUpdate.php");
     // check versions
         
     // completed.
+
+	}
   }
 }else{
 	echo "Unable to check for updates.";
