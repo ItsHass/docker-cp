@@ -1,7 +1,7 @@
 <?php 
 // get latest version info from github // 
 $github_version = null;
-$file_get_github = @file_get_contents("https://raw.githubusercontent.com/ItsHass/docker-cp/main/version"); 
+$file_get_github = @file_get_contents("https://raw.githubusercontent.com/ItsHass/docker-cp/main/site/version"); 
 $github_version = trim($file_get_github);
 
 $current_version = @file_get_contents("../version"); 
