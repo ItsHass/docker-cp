@@ -31,6 +31,12 @@
                 <i class="bi bi-bell"></i>
                 Notifications
             </a></li>
+
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="./?">
+                <i class="bi bi-arrow-up-circle"></i>
+                Force Update
+            </a></li>
     
 			  
 			</ul>			
