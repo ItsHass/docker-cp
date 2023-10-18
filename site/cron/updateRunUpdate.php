@@ -1,8 +1,8 @@
 <?php
 require_once("../db/config.php");
-$serverIP = "192.168.0.111";
-$serverUser = "hass";
-$serverPW = "Hassan";
+$serverIP = $update_server_sshIP;
+$serverUser = $update_server_sshUSER;
+$serverPW = $update_server_sshPASS;
 
 require "$site_path/assets/vendor/autoload.php";
 use phpseclib3\Net\SSH2;
