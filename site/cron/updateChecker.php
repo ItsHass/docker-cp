@@ -1,14 +1,24 @@
 <?php 
 // get latest version info from github // 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+echo "<p>Starting Script...</p>"; 
+
 $github_version = null;
 $file_get_github = @file_get_contents("https://raw.githubusercontent.com/ItsHass/docker-cp/main/site/version"); 
 $github_version = trim($file_get_github);
 
 $current_version = @file_get_contents("../version"); 
+$current_version = trim($current_version);
+
+echo "<p> Current Version : $current_version</p>";
+echo "<p> Github Version : $github_version</p>";
 
 if($github_version>0 && $current_version>0){
   // if github is newer version than current installed version
-	if($file_get_github>$current_version){
+	if($github_version>$current_version){
     // download latest zip file
     $url = "https://github.com/ItsHass/docker-cp/archive/refs/heads/main.zip";
       echo "<p> Attempting: $url </p>";
@@ -29,7 +39,11 @@ if($github_version>0 && $current_version>0){
     // completed.
 
 	}
-  }
+  }else{
+		if($github_version==$current_version){
+			echo "<p> All up-to-date </p>";
+		}
+	}
 }else{
 	echo "Unable to check for updates.";
 }
