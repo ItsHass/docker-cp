@@ -150,7 +150,7 @@ include_once("includes/function_timeago.php");
 			  <?php if($docker_total>0){  do { ?>
             <tr>
               <td align="center"><a class="btn btn-secondary btn-sm" href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>"><?php echo $docker_row['docker_label']; ?></a></td>
-              <td align="left"><a class="btn btn-primary btn-sm" href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>">View</a> <a class="btn btn-primary btn-sm" href="./?page=docker_edit&id=<?php echo $docker_row['docker_id']; ?>">Edit</a></td>
+              <td align="left"><a class="btn btn-primary btn-sm" data-bs-toggle="tooltip" title="View"  href="./?page=docker_info&id=<?php echo $docker_row['docker_id']; ?>"><i class="bi bi-eye"></i></a> <a data-bs-toggle="tooltip" title="Edit" class="btn btn-primary btn-sm" href="./?page=docker_edit&id=<?php echo $docker_row['docker_id']; ?>"><i class="bi bi-pencil"></i></a></td>
             </tr>
 			  <?php } while ($docker_row = mysqli_fetch_assoc($docker_result)); }else{ ?>
 			  <tr>
