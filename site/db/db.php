@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","hass_dockerUptime","Hassan12","hass_dockerUptime");
+$con = mysqli_connect("localhost","user","pw","db");
 
 // Check connection
 if (mysqli_connect_errno()) {
