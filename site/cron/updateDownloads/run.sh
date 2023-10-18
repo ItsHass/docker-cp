@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+echo "Location: $1"
 cd "$1/site/cron/updateDownloads/"
 tar -xf "docker-cp-main.zip"
 cd "docker-cp-main"
