@@ -201,6 +201,8 @@
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="./">Docker CP</a>
 
+	<p class="font-monospace text-muted text-start fs-6 pr-5"><?php include("version"); ?></p>
+	
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
       
