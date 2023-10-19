@@ -1,4 +1,4 @@
-<?php require_once("/home/hass/web/svr01.itshass.uk/public_html/docker/site/db/db.php"); require_once("/home/hass/web/svr01.itshass.uk/public_html/docker/site/db/connection.php"); ?>
+<?php require_once("../db/db.php"); require_once("../db/connection.php"); ?>
 <?php header('Content-Type: application/json; charset=utf-8');
 #$docker_query = "SELECT * FROM `dockers`;";
 #$docker_result = mysqli_query($con, $docker_query);
@@ -26,7 +26,7 @@ echo "checking : ". $containerID . " >> ";
     $docker1_row = mysqli_fetch_assoc($docker1_result); 
         $docker_label = $docker1_row['docker_label'];
 
-        include("/home/hass/web/svr01.itshass.uk/public_html/docker/site/cron/docker-get-container-status.php");
+        include("docker-get-container-status.php");
 
         $json_data = json_decode($containers_json, true);
 
@@ -39,7 +39,7 @@ echo "checking : ". $containerID . " >> ";
         if($containerStatus!=$prefStatus){
 			$Actions_required = "$prefStatus";
 						
-			include("/home/hass/web/svr01.itshass.uk/public_html/docker/site/cron/actions/$prefStatus.php");
+			include("actions/$prefStatus.php");
 
 			$Actions_JSON = json_decode($container_action_json, true);
 			
@@ -48,7 +48,7 @@ echo "checking : ". $containerID . " >> ";
 			$Actions_JSON = "";
         }
 	
-				include("/home/hass/web/svr01.itshass.uk/public_html/docker/site/cron/actions/log.php");
+				include("actions/log.php");
 	
         #$dump = print_r($json_data);
         #        echo "<pre> $dump </pre>";
