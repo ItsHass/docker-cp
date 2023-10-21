@@ -10,7 +10,7 @@ if(isset($_POST['ContainerName'])){
 		$Active = 0;
 	}
 		
-	$Insert_query = "UPDATE `hass_dockerUptime`.`monitor` SET `container_name`='$ContainerName', `prefStatus`='$PreferedStatus',`active`=$Active WHERE  `monitor_id`=$monitorID;";
+	$Insert_query = "UPDATE `monitor` SET `container_name`='$ContainerName', `prefStatus`='$PreferedStatus',`active`=$Active WHERE  `monitor_id`=$monitorID;";
 	$Insert_result = mysqli_query($con, $Insert_query);
 
 		$Insert = 1;
