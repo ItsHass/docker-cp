@@ -1,4 +1,4 @@
-<?php require_once("db/db.php"); require_once("db/connection.php"); ?>
+<?php require_once("db/db.php"); require_once("db/connection.php"); require_once("db/config.php"); ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
