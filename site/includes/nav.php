@@ -35,9 +35,14 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="./cron/updateChecker.php" target="_blank">
                 <i class="bi bi-arrow-up-circle"></i>
-                Force Update
+                Force Update <span class="badge bg-info text-dark"><?php if(isset($git_version)){ echo $git_version }else{ echo "main"; }; ?></span>
             </a></li>
-    
+
+		  <li class="nav-item">
+              <span class="nav-link d-flex align-items-center gap-2">
+                <small>Branch: 
+		</small>
+            </span></li>
 			  
 			</ul>			
 
