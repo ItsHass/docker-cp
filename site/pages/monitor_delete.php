@@ -1,7 +1,7 @@
 <?php $monitorID = $_GET['id'];
 if(isset($_GET['confirm'])){
 	# DELETE FROM `hass_dockerUptime`.`monitor` WHERE  `monitor_id`=10;
-	$D_query = "DELETE FROM `hass_dockerUptime`.`monitor` WHERE  `monitor_id`=$monitorID;";
+	$D_query = "DELETE FROM `monitor` WHERE  `monitor_id`=$monitorID;";
 	$D_result = mysqli_query($con, $D_query);
 	$deleted=1;
 }

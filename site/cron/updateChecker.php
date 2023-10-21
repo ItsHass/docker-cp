@@ -34,6 +34,24 @@ if($github_version>0 && $current_version>0){
     // from url and use file_put_contents() function to
     // save the file by using base name
 
+		// check run.sh exists
+$runsh = "updateDownloads/run.sh";
+$runsh_url = "https://raw.githubusercontent.com/ItsHass/docker-cp/$git_version/site/cron/updateDownloads/run.sh";
+if (file_exists($runsh)) {
+    // file exists... do nothing
+} else {
+    // download from git.
+	    if (file_put_contents("updateDownloads/run.sh", @file_get_contents($runsh_url)))
+    	{
+        echo "<p> Downloaded run.sh file </p>";
+    // check versions
+        
+    // completed.
+
+	}
+}
+
+		
     if (file_put_contents("updateDownloads/".$file_name, @file_get_contents($url)))
     	{
         echo "<p> Downloaded file </p>";
