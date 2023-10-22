@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `dockers` (
   `docker_user` tinytext NOT NULL,
   `docker_pw` text NOT NULL,
   PRIMARY KEY (`docker_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='docker connections';
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='docker connections';
 
 -- Data exporting was unselected.
 
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `monitor` (
   `prefStatus` tinytext NOT NULL,
   `active` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`monitor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Data exporting was unselected.
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `monitor_logs` (
   `actions` text DEFAULT NULL,
   `json` text NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2422 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Data exporting was unselected.
 
