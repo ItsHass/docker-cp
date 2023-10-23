@@ -7,3 +7,6 @@ Alpha Testing
 Monitoring:
 ![image](https://github.com/ItsHass/docker-cp/assets/88739447/bbe5a37c-46de-48e9-a06a-c339ae9561a1)
 
+Dev Mode:
+<code>Add to config.php a variable named <b>$git_version = "dev";</b></code>
+
