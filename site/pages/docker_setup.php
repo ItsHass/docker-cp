@@ -52,23 +52,7 @@ Added.
       <label for="ContainerName">Docker Password</label>
       <input type="text" class="form-control" id="DockerPW" name="DockerPW" placeholder="Password" value="">
     </div>
-  </div>
-    <div class="form-group col-md-4">
-      <label for="PreferedStatus">Prefered Status</label>
-      <select id="PreferedStatus" name="PreferedStatus" class="form-control">
-        <option selected disabled>Choose...</option>
-        <option>Running</option>
-		 <option>Exited</option>
-      </select>
-    </div>	
-  <div class="form-group p-3">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="Active" name="Active">
-      <label class="form-check-label" for="Active">
-        Active
-      </label>
-    </div>
-  </div>			  
+  </div>  
 
   <button type="submit" class="btn btn-primary">Create Monitor</button>
 </form>		  
