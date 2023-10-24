@@ -6,8 +6,10 @@ $dockerInfo_result = mysqli_query($con, $dockerInfo_query);
 $dockerInfo_total = mysqli_num_rows($dockerInfo_result);
 $dockerInfo_row = mysqli_fetch_assoc($dockerInfo_result);
 ?>
-<?php require_once("../docker-get-containers.php");
+<?php require_once("cron/docker-get-info.php");
+if(!isset($errors)){
 $json_data = json_decode($containers_json, true);
+}else{ echo "Connection Error"; exit; }
 ?>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
