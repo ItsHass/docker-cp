@@ -231,6 +231,14 @@
   </div>
 </div>	  
 
+<div>
+	<center>
+		<small>
+		<i class="bi bi-github"></i> 
+			<a href="https://github.com/ItsHass/docker-cp" target="_blank">ItsHass | Docker-CP</a> 
+		</small>
+	</center>
+</div>
 <?php if(isset($_GET['page'])){ $PageTitle = $_GET['page']; }else{ $PageTitle = "Home"; } ?>
 <script>
 document.title = '<?php echo ucfirst(str_replace("_"," ",$PageTitle)); ?>';
