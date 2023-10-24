@@ -30,7 +30,9 @@ echo "checking : ". $containerID . " >> ";
 
         $json_data = json_decode($containers_json, true);
 
+		if(isset($json_data['State']['Status'])){
         $containerStatus = strtolower($json_data['State']['Status']);
+		}else{ $containerStatus = "unknown"; }
         $prefStatus = strtolower($monitors_row['prefStatus']);
 
         echo "status: " .strtolower($containerStatus). " | expecting: ". strtolower($prefStatus) ."  

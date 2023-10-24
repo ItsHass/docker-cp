@@ -3,7 +3,7 @@ $serverIP = $docker1_row['docker_ip'];
 $serverUser = $docker1_row['docker_user'];
 $serverPW = $docker1_row['docker_pw'];
 
-require '../../../assets/vendor/autoload.php';
+require '../../assets/vendor/autoload.php';
 use phpseclib3\Net\SSH2;
 
 $ssh = new SSH2("$serverIP");

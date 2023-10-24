@@ -28,7 +28,7 @@ if($github_version>0 && $current_version>0){
       echo "<p> Attempting: $url </p>";
     // Use basename() function to return the base name of file
     //$file_name = basename($url);
-		$file_name = "main.zip";
+		$file_name = "$git_version.zip";
       echo "<p> Filename: $file_name </p>";
     // Use file_get_contents() function to get the file
     // from url and use file_put_contents() function to
