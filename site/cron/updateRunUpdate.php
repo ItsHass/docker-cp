@@ -12,7 +12,7 @@ if (!$ssh->login("$serverUser", "$serverPW")) {
     echo " login failed ";
 } // else{ //echo "<center><h3> connected... $serverUser@$serverIP </h3></center>  <br> <pre>"; }
 
-$containers_json = $ssh->exec("sh $site_path/site/cron/updateDownloads/run.sh $site_path");
+$containers_json = $ssh->exec("sh $site_path/site/cron/updateDownloads/run.sh $site_path $git_version");
 
 echo "<p><pre>
 $containers_json
