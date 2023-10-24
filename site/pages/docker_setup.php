@@ -23,8 +23,7 @@ $Insert = 1;
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="./?page=monitors">Monitors</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Monitor setup </li>
+    <li class="breadcrumb-item active" aria-current="page">Docker setup</li>
   </ol>
 </nav>
 
@@ -36,6 +35,7 @@ Added.
 ?>
 <form action="" method="post" enctype="multipart/form-data">
   <div class="form-row">
+  
     <div class="form-group col-md-6">
       <label for="DockerID">Docker Label</label>
       <input type="text" class="form-control" id="DockerID" name="DockerID" placeholder="Docker ID" readonly value="">
@@ -48,17 +48,18 @@ Added.
       <label for="ContainerName">Docker Username</label>
       <input type="text" class="form-control" id="DockerUser" name="DockerUser" placeholder="Username" value="">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-6 pb-4">
       <label for="ContainerName">Docker Password</label>
       <input type="text" class="form-control" id="DockerPW" name="DockerPW" placeholder="Password" value="">
     </div>
+    
   </div>  
 
-  <button type="submit" class="btn btn-primary">Create Monitor</button>
+  <button type="submit" class="btn btn-primary">Create Docker</button>
 </form>		  
 <?php
 } ?>
 		  
 		  
-      </div>
+</div>
 </main>
