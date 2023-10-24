@@ -40,8 +40,8 @@
 
 		  <li class="nav-item">
               <span class="nav-link d-flex align-items-center gap-2">
-                <small>Branch: <span class="badge bg-info text-dark"><?php if(isset($git_version)){ echo $git_version; }else{ echo "main"; }; ?></span>
-		</small>
+                <small>Branch: </small><span class="badge bg-info text-dark"><?php if(isset($git_version)){ echo $git_version; }else{ echo "main"; }; ?></span>
+		
             </span></li>
 			  
 			</ul>			
