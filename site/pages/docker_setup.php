@@ -1,8 +1,8 @@
 <?php if(isset($_POST['DockerID'])){
 	$DockerID = $_POST['DockerID'];
-	$ContainerID = $_POST['ContainerID'];
-	$ContainerName = $_POST['ContainerName'];
-	$PreferedStatus = $_POST['PreferedStatus'];
+	$DockerIP = $_POST['DockerIP'];
+	$DockerUser = $_POST['DockerUser'];
+	$DockerPW = $_POST['DockerPW'];
 	if(isset($_POST['Active'])){
 		$Active = 1;
 	}else{
@@ -10,7 +10,7 @@
 	}
 	
 	
-$Insert_query = "INSERT INTO `monitor` (`docker_id`, `container_id`, `prefStatus`, `active`, `container_name`) VALUES ('$DockerID', '$ContainerID', '$PreferedStatus', '$Active', '$ContainerName');";
+$Insert_query = "INSERT INTO `dockers` (`docker_label`, `active`, `docker_ip`, `docker_user`, `docker_pw`) VALUES ('$DockerID', '1', '$DockerIP', '$DockerUser', '$DockerPW');";
 $Insert_result = mysqli_query($con, $Insert_query);
 $Insert = 1;
 }
@@ -23,8 +23,7 @@ $Insert = 1;
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="./">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="./?page=monitors">Monitors</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Monitor setup </li>
+    <li class="breadcrumb-item active" aria-current="page">Docker setup</li>
   </ol>
 </nav>
 
@@ -36,41 +35,31 @@ Added.
 ?>
 <form action="" method="post" enctype="multipart/form-data">
   <div class="form-row">
+  
     <div class="form-group col-md-6">
-      <label for="DockerID">Docker ID</label>
-      <input type="text" class="form-control" id="DockerID" name="DockerID" placeholder="Docker ID" readonly value="<?php echo $_GET['docker']; ?>">
+      <label for="DockerID">Docker Label</label>
+      <input type="text" class="form-control" id="DockerID" name="DockerID" placeholder="Docker ID" readonly value="">
     </div>
     <div class="form-group col-md-6">
-      <label for="ContainerID">Container ID</label>
-      <input type="text" class="form-control" id="ContainerID" name="ContainerID" placeholder="Container ID" readonly value="<?php echo $_GET['id']; ?>">
+      <label for="ContainerID">Docker IP</label>
+      <input type="text" class="form-control" id="DockerIP" name="DockerIP" placeholder="IP Address" readonly value="">
     </div>
     <div class="form-group col-md-6">
-      <label for="ContainerName">Container Name</label>
-      <input type="text" class="form-control" id="ContainerName" name="ContainerName" placeholder="Container Name" value="<?php echo $_GET['name']; ?>">
-    </div>	  
-  </div>
-    <div class="form-group col-md-4">
-      <label for="PreferedStatus">Prefered Status</label>
-      <select id="PreferedStatus" name="PreferedStatus" class="form-control">
-        <option selected disabled>Choose...</option>
-        <option>Running</option>
-		 <option>Exited</option>
-      </select>
-    </div>	
-  <div class="form-group p-3">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="Active" name="Active">
-      <label class="form-check-label" for="Active">
-        Active
-      </label>
+      <label for="ContainerName">Docker Username</label>
+      <input type="text" class="form-control" id="DockerUser" name="DockerUser" placeholder="Username" value="">
     </div>
-  </div>			  
+    <div class="form-group col-md-6 pb-4">
+      <label for="ContainerName">Docker Password</label>
+      <input type="text" class="form-control" id="DockerPW" name="DockerPW" placeholder="Password" value="">
+    </div>
+    
+  </div>  
 
-  <button type="submit" class="btn btn-primary">Create Monitor</button>
+  <button type="submit" class="btn btn-primary">Create Docker</button>
 </form>		  
 <?php
 } ?>
 		  
 		  
-      </div>
+</div>
 </main>
