@@ -1,8 +1,8 @@
 
 <?php $monitorID = $_GET['id'];
 if(isset($_GET['confirm'])){
-	# DELETE FROM `hass_dockerUptime`.`monitor` WHERE  `monitor_id`=10;
-	$D_query = "DELETE FROM `dockers` WHERE  `monitor_id`=$monitorID;";
+	///# DELETE FROM `hass_dockerUptime`.`monitor` WHERE  `monitor_id`=00;
+	$D_query = "DELETE FROM `dockers` WHERE `docker_id`=$monitorID;";
 	$D_result = mysqli_query($con, $D_query);
 	$deleted=1;
 }
@@ -37,7 +37,7 @@ if(isset($_GET['confirm'])){
     <p align="left"><strong>Are you sure?</strong></p>
     <p align="left">
 <a href="./?page=monitors"><span type="button" class="btn btn-success">Back </span></a>	
-<a href="./?page=monitor_delete&id=<?php echo $_GET['id']; ?>&confirm"><span type="button" class="btn btn-danger">DELETE !</span></a>			
+<a href="./?page=docker_delete&id=<?php echo $_GET['id']; ?>&confirm"><span type="button" class="btn btn-danger">DELETE !</span></a>			
 		  </p>
       </div>
 
