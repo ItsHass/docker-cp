@@ -38,11 +38,11 @@ Added.
   
     <div class="form-group col-md-6">
       <label for="DockerID">Docker Label</label>
-      <input type="text" class="form-control" id="DockerID" name="DockerID" placeholder="Docker ID" readonly value="">
+      <input type="text" class="form-control" id="DockerID" name="DockerID" placeholder="Docker ID" value="">
     </div>
     <div class="form-group col-md-6">
       <label for="ContainerID">Docker IP</label>
-      <input type="text" class="form-control" id="DockerIP" name="DockerIP" placeholder="IP Address" readonly value="">
+      <input type="text" class="form-control" id="DockerIP" name="DockerIP" placeholder="IP Address" value="">
     </div>
     <div class="form-group col-md-6">
       <label for="ContainerName">Docker Username</label>
